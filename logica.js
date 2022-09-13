@@ -1,20 +1,44 @@
-function aleatorio(min, max){
-    return Math.floor(Math.random()* (max - min + 1) + min);    
+function eleccionJugador(){
+    let inputPiedra = document.getElementById('piedra')
+    let inputPapel = document.getElementById('papel')
+    let inputTijera = document.getElementById('tijera')
+    let spanEleccionJugador = document.getElementById('resultadoEleccion')
+    
+    if(inputPiedra.checked){
+       spanEleccionJugador.innerHTML = 'Piedra'
+    } else if(inputPapel.checked){
+        spanEleccionJugador.innerHTML = 'Papel'
+    } else if(inputTijera.checked){
+        spanEleccionJugador.innerHTML = 'Tijera'
+    } else{
+        alert("Error, no escogiste nada")
+        spanEleccionJugador.innerHTML = 'Nada'
+    }
+    eleccionPC()
 }
 
-function eleccion(elegiste){
-    var resultado = "";
-    if(elegiste == 1){
-        resultado = "Elegio Piedra";
-    } else if(elegiste == 2){
-        resultado = "Elegio Papel";
-    } else if(elegiste == 3){
-        resultado = "Elegio Tijera";
-    } else{
-        resultado = "Mala eleccion";
-    }
-    return resultado;
+function eleccionPC(){
+    let numAleatorio = aleatorio(1,3)
+    let spanEleccionPC = document.getElementById('resultadoEleccionPC')
+
+    if(numAleatorio == 1){
+        spanEleccionPC.innerHTML = 'Piedra'
+    } else if(numAleatorio == 2){
+        spanEleccionPC.innerHTML = 'Papel'
+    } else if(numAleatorio == 3){
+        spanEleccionPC.innerHTML = 'Tijera'
+    } 
 }
+
+function aleatorio(min, max){
+    return Math.floor(Math.random()* (max - min + 1) + min);
+}
+
+let eleccionJugador1 = document.getElementById('eleccionjugador')
+eleccionJugador1.addEventListener('click', eleccionJugador)
+
+
+/*
 
 var jugador1 = 0;
 var jugador2 = 0;
@@ -46,3 +70,4 @@ while(victorias < 3 && derrotas < 3){
     }
 }
 alert("Tuviste " + victorias + " victorias y " + derrotas + " derrotas.");
+*/
