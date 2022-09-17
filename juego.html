@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8"/>
         <title>Piedra, papel o tijera</title>
-        <script src="logica.js" defer></script>
+        <script src="logica.js"></script>
              
     </head>
     <body>
         <h1>Hola, vamos a jugar piedra, papel o tijera.</h1>
+        <p>El que primero obtenga 5 victorias gana. Buena suerte</p>
         
         <section id="eleccion1">
             <h2>Elige tu jugada:</h2>
@@ -20,24 +21,30 @@
             <label for="tijera">Tijera</label>
             <input type="radio" name="elige" id="tijera"/>
 
-            <button id="eleccionjugador">Ok</button>
+            <button id="boton-eleccion-jugador">Ok</button>
         </section>
 
         <section id="resultadoEleccionJugador">
             <h2>Elegiste:</h2>
-            <p>Tu eleccion fue <span id="resultadoEleccion"> </span></p>            
+            <p>Tu eleccion fue <span id="resultado-eleccion"> </span></p>            
         </section>
 
         <section id="eleccionpc">
-            <h2>El pc eligio:</h2>
-            <p>La eleccion del pc fue <span id="resultadoEleccionPC">Prueba</span></p>
+            <h2>El PC eligio:</h2>
+            <p>La eleccion del pc fue <span id="resultadoEleccionPC"></span></p>
             <button id="jugar">Jugar</button>
         </section>
 
-        <section id="resultado">
-            <p>Ganaste!</p>
-            <p>Marcador: 3 victoras, 1 derrotas</p>
-            <button id="volverajugar">Siguiente</button>
+        <section id="mensaje-resultado">
+            <H2>Resultados:</H2>
+        </section>
+
+        <section id="marcador">
+            <h2>Marcador:</h2>
+            <p>Victorias: <span id="victorias">0</span></p>
+            <p>Derrotas: <span id="derrotas">0</span></p>
+            <p>Empates: <span id="empates">0</span></p>
+            <button id="volverajugar">Juega otra vez</button>
             <button id="reiniciar">Reiniciar</button>
         </section>
         
